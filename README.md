@@ -28,5 +28,5 @@ The ChoiceScript Save Plugin (Ext) includes virtually all of the same features f
 **Import** takes data given by the user and parses it into save(s) that will appear in the drop-down menu. Clicking the 'Import' button will bring up a prompt with an empty text area; copy the text from your exported file and paste it into the text area. Press "OK" to convert the save(s) *(Note: Multiple saves can be pasted into the text area. Ensure each save is separated into their own line.)*.
 
 ### Delete All
-**Delete All** deletes all saves listed in the drop-down menu. Clicking the 'Delete All' button will bring up a prompt asking the user to confirm this action. Press "OK" to delete all saves. *(Note: Saves will not be retrievable after deletion.)*.
+**Delete All** deletes all saves listed in the drop-down menu. Clicking the 'Delete All' button will bring up a prompt asking the user to confirm this action. Press "OK" to delete all saves *(Note: Saves will not be retrievable after deletion.)*.
 
