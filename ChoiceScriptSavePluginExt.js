@@ -471,7 +471,7 @@ ChoiceScriptSavePlugin.export_all = function () {
 ChoiceScriptSavePlugin.import = function () {
 	var message = "Paste your exported save(s) into the text area below.";
 	// create file input element
-	var sample = "e.g. PS(game name)PSstate(slot name):\"{(game stats)}\"";
+	var sample = "<i>e.g. PS(game name)PSstate(slot name):\"{(game stats)}\"</i>";
 	message = message + "<br>" + sample + "<br><br>" + "(For multiple saves, use separate lines for each save.)";
 	message = message + "<br><br>" + "<textarea id=\"saveInput\"></textarea>"
 	
