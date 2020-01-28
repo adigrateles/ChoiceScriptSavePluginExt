@@ -4,6 +4,9 @@ var btn_export = true;
 var btn_export_all = true;
 var btn_import = true;
 
+// set length (in ms) to delay before executing
+var timeoutLength = 600;
+
 /* ----- New ChoiceScript Commands ----- */
 Scene.prototype.sm_save = function (line) {
 	var stack = this.tokenizeExpr(line);
@@ -100,7 +103,7 @@ ChoiceScriptSavePlugin._save = function (dateSlot, saveName) {
 					selectEle.innerHTML = "";
 					ChoiceScriptSavePlugin._populateSaveMenu(selectEle);
 				}
-			}, 3000);
+			}, timeoutLength);
 		} else {
 			/* ChoiceScript hasn't created a save we can use yet.
 			This happens when we try to save right after the game
@@ -134,7 +137,7 @@ ChoiceScriptSavePlugin._delete_all = function () {
 			selectEle.innerHTML = "";
 			ChoiceScriptSavePlugin._populateSaveMenu(selectEle);
 		}
-	}, 3000);
+	}, timeoutLength);
 }
 
 ChoiceScriptSavePlugin._export = function (exportName, save_id) {
@@ -233,7 +236,7 @@ ChoiceScriptSavePlugin._import = function(textAreaValue) {
 				selectEle.innerHTML = "";
 				ChoiceScriptSavePlugin._populateSaveMenu(selectEle);
 			}
-		}, 3000);
+		}, timeoutLength);
 	}
 }
 
@@ -358,8 +361,11 @@ ChoiceScriptSavePlugin._getSaveList = function () {
 
 ChoiceScriptSavePlugin._init = function () {
 	// don't initialize until files have been uploaded (CS commit: 8092aedf17505bd5f9b46c76acf082b89d494a03)
-	if (("file:" === window.location.protocol) && (!window.uploadedFiles)) {
-		setTimeout(ChoiceScriptSavePlugin._init, 3000);
+	// if (("file:" === window.location.protocol) && (!window.uploadedFiles)) {
+	// zMisc - noTimeout
+	if (("file:" === window.location.protocol) && (!window.uploadedFiles) && 1 == 0) {
+	// e zMisc - noTimeout
+		setTimeout(ChoiceScriptSavePlugin._init, timeoutLength);
 		return;
 	}
 	if (!window.storeName) {
@@ -471,9 +477,9 @@ ChoiceScriptSavePlugin.export_all = function () {
 ChoiceScriptSavePlugin.import = function () {
 	var message = "Paste your exported save(s) into the text area below.";
 	// create file input element
-	var sample = "<i>e.g. PS(game name)PSstate(slot name):\"{(game stats)}\"</i>";
-	message = message + "<br>" + sample + "<br><br>" + "(For multiple saves, use separate lines for each save.)";
-	message = message + "<br><br>" + "<textarea id=\"saveInput\"></textarea>"
+	var sample = "e.g. PS(game name)PSstate(slot name):''{(game stats)}''\nPS(game name)PSstate(slot name 2):\''{(game stats 2)}''\n...";
+	message = message + "<br><br>" + "(For multiple saves, use separate lines for each save.)";
+	message = message + "<br><br>" + "<textarea id=\"saveInput\" cols=40 rows=30 placeholder=\"" + sample + "\"></textarea>"
 	
 	alertify.confirm(message, function(result) {
 		if (!result) {
@@ -492,4 +498,4 @@ ChoiceScriptSavePlugin.import = function () {
 }
 
 // initialize after a small delay, so everything else can catch up.
-setTimeout(ChoiceScriptSavePlugin._init, 3000);
+setTimeout(ChoiceScriptSavePlugin._init, timeoutLength);
