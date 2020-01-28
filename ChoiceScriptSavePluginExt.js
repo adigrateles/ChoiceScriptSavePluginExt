@@ -5,7 +5,7 @@ var btn_export_all = true;
 var btn_import = true;
 
 // set length (in ms) to delay before executing
-var timeoutLength = 600;
+var timeoutLength = 600; // default value: 3000
 
 /* ----- New ChoiceScript Commands ----- */
 Scene.prototype.sm_save = function (line) {
