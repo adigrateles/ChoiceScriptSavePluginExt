@@ -7,7 +7,7 @@ This plugin was forked from <a href="https://github.com/CareyJWilliams">CareyJWi
 
 <a href="https://github.com/ChoicescriptIDE/ChoiceScriptSavePlugin#installation">The instructions for installing the original ChoiceScript Save Plugin</a> also apply here, with a few differences.
 
-First, <a href="https://raw.githubusercontent.com/adigrateles/ChoiceScriptSavePluginExt/master/ChoiceScriptSavePlugin.js">download ChoiceSCriptSavePlugin.js here</a>.
+First, <a href="https://raw.githubusercontent.com/adigrateles/ChoiceScriptSavePluginExt/master/ChoiceScriptSavePlugin.js">download ChoiceScriptSavePlugin.js here</a>.
 
 Place it in the same directory as your other script files.
 
